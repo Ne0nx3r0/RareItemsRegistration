@@ -15,11 +15,6 @@ import org.json.simple.JSONObject;
 
 public class AdminApiMessenger
 {
-    public AdminApiMessenger()
-    {
-        
-    }
-    
     public String sendEncryptedMessage(String sUrl,String plainMessage) throws Exception
     {
         byte[] bEncryptedMessage = RSA.encrypt(plainMessage.getBytes(),RareItemsRegistration.keyPair.getPublic());
@@ -86,14 +81,5 @@ public class AdminApiMessenger
         }
         
         return false;
-    }
-    
-    public void fetchPlayerRareItems(String sPlayerName)
-    {
-        (new Thread(){
-            public void run(){
-              System.out.println("Thread Running");  
-            }
-        }).start();
     }
 }
